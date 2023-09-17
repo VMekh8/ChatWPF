@@ -28,7 +28,8 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.ColumnSpan="2" Background="#232323">
+        <Border Grid.ColumnSpan="2" Background="#232323"
+                MouseDown="Border_MouseDown">
 
             <Grid HorizontalAlignment="Stretch">
                 <Label Content="Messenger" Foreground="DarkGray" FontSize="10" FontWeight="SemiBold"
@@ -36,11 +37,11 @@
 
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
 
-                    <Button Height="20" Width="20" Foreground="LightGray" Content="__" Margin="0,0,0,3" Background="Transparent" BorderThickness="0"/>
+                    <Button Height="20" Width="20" Foreground="LightGray" Content="__" Margin="0,0,0,3" Background="Transparent" BorderThickness="0" Click="ButtonMinimize_Click"/>
 
-                    <Button Height="20" Width="20" Foreground="LightGray" Content="▢" Background="Transparent" BorderThickness="0"/>
+                    <Button Height="20" Width="20" Foreground="LightGray" Content="▢" Background="Transparent" BorderThickness="0" Click="ButtonMaximized_Click"/>
 
-                    <Button Height="20" Width="20" Foreground="LightGray" Content="X" Background="Transparent" BorderThickness="0"/>
+                    <Button Height="20" Width="20" Foreground="LightGray" Content="X" Background="Transparent" BorderThickness="0" Click="ButtonExit_Click"/>
 
                 </StackPanel>
                 
