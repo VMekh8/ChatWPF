@@ -4,9 +4,51 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatWPF"
+        xmlns:viewmodel="clr-namespace:ChatWPF.MVVM.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Height="600" Width="1200"
+        Background="#33353F" ResizeMode="CanResizeWithGrip"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
+    
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.ColumnSpan="2" Background="#232323">
+
+            <Grid HorizontalAlignment="Stretch">
+                <Label Content="Messenger" Foreground="DarkGray" FontSize="10" FontWeight="SemiBold"
+                   VerticalAlignment="Center"/>
+
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+
+                    <Button Height="20" Width="20" Foreground="LightGray" Content="__" Margin="0,0,0,3" Background="Transparent" BorderThickness="0"/>
+
+                    <Button Height="20" Width="20" Foreground="LightGray" Content="▢" Background="Transparent" BorderThickness="0"/>
+
+                    <Button Height="20" Width="20" Foreground="LightGray" Content="X" Background="Transparent" BorderThickness="0"/>
+
+                </StackPanel>
+                
+                
+            </Grid>
+
+
+        </Border>
+
     </Grid>
 </Window>
