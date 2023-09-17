@@ -51,5 +51,30 @@
 
         </Border>
 
+
+        <Grid Background="#2F3136" Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Contacts" 
+                   VerticalAlignment="Center"
+                   FontWeight="Medium"
+                   Foreground="LightGray"
+                   FontSize="14"/>
+
+            <Separator Margin="5,45,5,0"/>
+
+
+            <ListView ItemsSource="{Binding Contacts}"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      Grid.Row="1"
+                      ItemContainerStyle="{StaticResource ContactCard}"/>
+
+        </Grid>
+        
     </Grid>
 </Window>
