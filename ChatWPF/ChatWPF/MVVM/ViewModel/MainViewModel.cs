@@ -18,6 +18,25 @@ namespace ChatWPF.MVVM.ViewModel
         {
             Messages = new ObservableCollection<MessageModel>();
             Contacts = new ObservableCollection<ContactModel>();
+
+
+            Messages.Add(new MessageModel
+            {
+                Username = "allison",
+                UsernameColor = "#409aff",
+                imageSource = "",
+                Message = "Last",
+                Time = DateTime.Now,
+                IsNativeOrigin = true
+            });
+
+            Contacts.Add(new ContactModel
+            {
+                Username = "allison",
+                imageSource = "",
+                Messages = Messages
+
+            });
         }
     }
 }
