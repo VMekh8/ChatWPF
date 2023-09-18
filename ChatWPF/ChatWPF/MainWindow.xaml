@@ -15,7 +15,7 @@
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -44,8 +44,8 @@
                     <Button Height="20" Width="20" Foreground="LightGray" Content="X" Background="Transparent" BorderThickness="0" Click="ButtonExit_Click"/>
 
                 </StackPanel>
-                
-                
+
+
             </Grid>
 
 
@@ -65,7 +65,7 @@
                    Foreground="LightGray"
                    FontSize="14"/>
 
-            <Separator Margin="5,45,5,0"/>
+            <Separator Background="DarkGray" Margin="10,40,10,0" Height="5"/>
 
 
             <ListView ItemsSource="{Binding Contacts}"
@@ -74,7 +74,23 @@
                       Grid.Row="1"
                       ItemContainerStyle="{StaticResource ContactCard}"/>
 
+
+            <StackPanel Grid.Row="2">
+                <Separator Background="DarkGray" Margin="10,0,10,0" Height="5"/>
+                <Grid>
+                    <Label Content="Username" FontSize="16" Foreground="LightGray" Margin="60,0,10,20"/>
+                    <Ellipse Height="40" Width="40" Margin="20,1,140,0">
+                        <Ellipse.Resources>
+                            <Style TargetType="{x:Type Ellipse}">
+                                <Setter Property="Fill" Value="BlueViolet"/>
+                            </Style>
+                        </Ellipse.Resources>
+                    </Ellipse>
+                    <Label Margin="65,28,20,8" Content="Custom Status" FontSize="11" Foreground="Gray" Padding="3"/>
+                </Grid>
+            </StackPanel>
+
         </Grid>
-        
+
     </Grid>
 </Window>

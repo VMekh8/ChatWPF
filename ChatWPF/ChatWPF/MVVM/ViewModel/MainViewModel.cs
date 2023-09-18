@@ -24,7 +24,7 @@ namespace ChatWPF.MVVM.ViewModel
             {
                 Username = "allison",
                 UsernameColor = "#409aff",
-                imageSource = "",
+                imageSource = "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg",
                 Message = "Last",
                 Time = DateTime.Now,
                 IsNativeOrigin = true

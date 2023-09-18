@@ -105,5 +105,8 @@
     <Folder Include="Core\" />
     <Folder Include="MVVM\View\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\avatar1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
