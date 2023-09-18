@@ -24,7 +24,7 @@ namespace ChatWPF.MVVM.ViewModel
             {
                 Username = "allison",
                 UsernameColor = "#409aff",
-                imageSource = "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg",
+                ImageSource = "../pictures/avatar1.jpg",
                 Message = "Last",
                 Time = DateTime.Now,
                 IsNativeOrigin = true
@@ -33,7 +33,7 @@ namespace ChatWPF.MVVM.ViewModel
             Contacts.Add(new ContactModel
             {
                 Username = "allison",
-                imageSource = "",
+                ImageSource = "../pictures/avatar1.jpg",
                 Messages = Messages
 
             });

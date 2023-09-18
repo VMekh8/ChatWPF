@@ -11,7 +11,7 @@ namespace ChatWPF.MVVM.Model
     {
 
         public string Username { get; set; }
-        public string imageSource { get; set; }
+        public string ImageSource { get; set; }
         public ObservableCollection<MessageModel> Messages { get; set; }
         public string LastMessage => Messages.Last().Message;
     }
