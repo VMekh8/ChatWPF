@@ -92,5 +92,49 @@
 
         </Grid>
 
+        <Grid Grid.Column="1" Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+
+            <Border BorderBrush="#2F3136" BorderThickness="0,0,0,2">
+                <Grid HorizontalAlignment="Stretch" Margin="8">
+                    <Label Content="@Username" Foreground="White"
+                           FontWeight="Bold" Margin="5,0,5,0"
+                           VerticalAlignment="Center"/>
+                </Grid>
+            </Border>
+
+
+
+            <ListView ItemsSource="{Binding SelectedContact.Messages}"
+                      Background="Transparent"
+                      BorderThickness="0"
+                      ItemContainerStyle="{StaticResource ChatItem}"
+                      Margin="8,0,0,0"
+                      Grid.Row="1"/>
+
+
+
+            <Grid Grid.Row="2">
+                
+
+                <TextBox Grid.ColumnSpan="2"
+                         Text="Message"
+                         Height="50"
+                         Style="{StaticResource MessageBox}"/>
+
+
+            </Grid>
+        
+            
+
+        </Grid>
+       
+        
+        
     </Grid>
 </Window>
