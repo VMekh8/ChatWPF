@@ -15,9 +15,18 @@ namespace ChatWPF.MVVM.ViewModel
         public ObservableCollection<ContactModel> Contacts{ get; set; }
 
 
-        public ContactModel SelectedContact { get; set; }
-            
-        
+        private ContactModel _selectedContact;
+
+        public  ContactModel SelectedContact
+        {
+            get { return _selectedContact; }
+            set { _selectedContact = value;
+                OnPropertyChange();
+            }
+        }
+
+
+        public RelayCommand SendCommand { get; set; }
 
         private string _message;
 
@@ -32,6 +41,16 @@ namespace ChatWPF.MVVM.ViewModel
             Messages = new ObservableCollection<MessageModel>();
             Contacts = new ObservableCollection<ContactModel>();
 
+            SendCommand = new RelayCommand(o =>
+            {
+                Messages.Add(new MessageModel
+                {
+                    Message = Message,
+                    FirstMessage = false
+                });
+                Message = "";
+            });
+
 
             Messages.Add(new MessageModel
             {
@@ -40,8 +59,12 @@ namespace ChatWPF.MVVM.ViewModel
                 ImageSource = "../pictures/avatar1.jpg",
                 Message = "Last",
                 Time = DateTime.Now,
-                IsNativeOrigin = true
+                IsNativeOrigin = false,
+                FirstMessage = true
             });
+
+
+          
 
             Contacts.Add(new ContactModel
             {
@@ -50,6 +73,8 @@ namespace ChatWPF.MVVM.ViewModel
                 Messages = Messages
 
             });
+
+
         }
     }
 }
