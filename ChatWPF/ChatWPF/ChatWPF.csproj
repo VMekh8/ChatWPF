@@ -84,6 +84,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\LoginChatTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\MessageBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,7 +96,9 @@
   <ItemGroup>
     <Compile Include="MVVM\Model\ContactModel.cs" />
     <Compile Include="MVVM\Model\MessageModel.cs" />
+    <Compile Include="MVVM\ViewModel\LoginViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="Net\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -116,7 +122,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MVVM\View\" />

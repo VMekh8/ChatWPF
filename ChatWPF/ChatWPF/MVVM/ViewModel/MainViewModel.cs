@@ -1,5 +1,6 @@
 ﻿using ChatWPF.Core;
 using ChatWPF.MVVM.Model;
+using ChatWPF.Net;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,7 +15,7 @@ namespace ChatWPF.MVVM.ViewModel
         public ObservableCollection<MessageModel> Messages{ get; set; }
         public ObservableCollection<ContactModel> Contacts{ get; set; }
 
-
+       
         private ContactModel _selectedContact;
 
         public  ContactModel SelectedContact
@@ -25,6 +26,8 @@ namespace ChatWPF.MVVM.ViewModel
             }
         }
 
+
+       
 
         public RelayCommand SendCommand { get; set; }
 
@@ -40,6 +43,7 @@ namespace ChatWPF.MVVM.ViewModel
         {
             Messages = new ObservableCollection<MessageModel>();
             Contacts = new ObservableCollection<ContactModel>();
+            
 
             SendCommand = new RelayCommand(o =>
             {
@@ -57,7 +61,7 @@ namespace ChatWPF.MVVM.ViewModel
                 Username = "allison",
                 UsernameColor = "#409aff",
                 ImageSource = "../pictures/avatar1.jpg",
-                Message = "Last",
+                Message = " ",
                 Time = DateTime.Now,
                 IsNativeOrigin = false,
                 FirstMessage = true
@@ -68,7 +72,7 @@ namespace ChatWPF.MVVM.ViewModel
 
             Contacts.Add(new ContactModel
             {
-                Username = "allison",
+                Username = "Group Chat",
                 ImageSource = "../pictures/avatar1.jpg",
                 Messages = Messages
 

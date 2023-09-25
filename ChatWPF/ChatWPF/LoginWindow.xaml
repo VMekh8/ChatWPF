@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatWPF"
+        xmlns:viewmodel="clr-namespace:ChatWPF.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="LoginWindow" Height="150" Width="350"
         WindowStyle="None"
@@ -11,7 +12,12 @@
         WindowStartupLocation="Manual"
         Left="200" Top="500"
         ResizeMode="NoResize">
-    
+
+
+    <Window.DataContext>
+        <viewmodel:LoginViewModel/>
+    </Window.DataContext>
+        
     <Grid>
 
 
@@ -30,13 +36,15 @@
 
             <Label Content="Username" Foreground="White" FontSize="18" FontWeight="SemiBold"
                    Margin="67,5,106,90"/>
-            <TextBox Background ="LightGray" Margin="75,40,75,65"
-                     VerticalContentAlignment="Center"/>
+            <TextBox 
+                     VerticalContentAlignment="Center"
+                     Style="{StaticResource LoginChatTheme}"/>
 
             
                 <Button Content="Submit" Margin="115,75,115,20" 
                         Background="#212225" BorderThickness="0" 
-                        Foreground="White" FontWeight="SemiBold">
+                        Foreground="White" FontWeight="SemiBold"
+                        Command="{Binding ConnectToServerCommand}">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
                             <Setter Property="CornerRadius" Value="15"/>
