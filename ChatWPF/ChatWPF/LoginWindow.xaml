@@ -38,7 +38,8 @@
                    Margin="67,5,106,90"/>
             <TextBox 
                      VerticalContentAlignment="Center"
-                     Style="{StaticResource LoginChatTheme}"/>
+                     Style="{StaticResource LoginChatTheme}"
+                     Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
 
             
                 <Button Content="Submit" Margin="115,75,115,20" 
