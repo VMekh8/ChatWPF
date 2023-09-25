@@ -75,11 +75,11 @@
                       Grid.Row="1"
                       ItemContainerStyle="{StaticResource ContactCard}"/>
 
-
+          
             <StackPanel Grid.Row="2">
                 <Separator Background="DarkGray" Margin="10,0,10,0" Height="5"/>
                 <Grid>
-                    <Label Content="Username" FontSize="16" Foreground="LightGray" Margin="60,0,10,20"/>
+                    <Label Content="Username" FontSize="16" Foreground="LightGray" Margin="60,0,10,20" MouseDoubleClick="LabelOpendialog_MouseDoubleClick"/>
                     <Ellipse Height="40" Width="40" Margin="20,1,140,0">
                         <Ellipse.Resources>
                             <Style TargetType="{x:Type Ellipse}">
@@ -88,6 +88,7 @@
                         </Ellipse.Resources>
                     </Ellipse>
                     <Label Margin="65,28,20,8" Content="Custom Status" FontSize="11" Foreground="Gray" Padding="3"/>
+                    
                 </Grid>
             </StackPanel>
 
@@ -134,8 +135,7 @@
             
 
         </Grid>
-       
-        
+
         
     </Grid>
 </Window>

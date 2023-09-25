@@ -25,6 +25,7 @@ namespace ChatWPF
             InitializeComponent();
         }
 
+  
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -52,6 +53,12 @@ namespace ChatWPF
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.Close();
+        }
+
+        private void LabelOpendialog_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.ShowDialog();
         }
     }
 }
