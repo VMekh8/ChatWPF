@@ -22,6 +22,9 @@ namespace ChatServer.Net.IO
             var lenght = ReadInt32();
             msgBuffer = new byte[lenght];
             _ns.Read(msgBuffer, 0, lenght);
+
+            var msg = Encoding.ASCII.GetString(msgBuffer);
+            return msg;
         }
     }
 }

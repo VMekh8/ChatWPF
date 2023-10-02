@@ -61,14 +61,14 @@ namespace ChatWPF.MVVM.ViewModel
                 Username = "allison",
                 UsernameColor = "#409aff",
                 ImageSource = "../pictures/avatar1.jpg",
-                Message = " ",
+                Message = null,
                 Time = DateTime.Now,
                 IsNativeOrigin = false,
                 FirstMessage = true
             });
 
 
-          
+
 
             Contacts.Add(new ContactModel
             {

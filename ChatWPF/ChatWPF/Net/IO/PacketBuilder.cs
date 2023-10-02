@@ -22,9 +22,13 @@ namespace ChatWPF.Net.IO
 
         public void WriteString(string msg)
         {
-            var msgLenght = msg.Length;
-            _ms.Write(BitConverter.GetBytes(msgLenght), 0, msgLenght);
-            _ms.Write(Encoding.ASCII.GetBytes(msg), 0, msgLenght);
+            byte[] lengthBytes = BitConverter.GetBytes(msg.Length);
+
+            _ms.Write(lengthBytes, 0, lengthBytes.Length);
+
+            byte[] messageBytes = Encoding.ASCII.GetBytes(msg);
+
+            _ms.Write(messageBytes, 0, messageBytes.Length);
         }
 
         public byte[] GetPacketBytes()

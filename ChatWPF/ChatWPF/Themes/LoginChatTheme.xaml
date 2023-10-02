@@ -11,10 +11,10 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
 
 
-        <Setter Property="Template">
+        <!--<Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
-                    <Border CornerRadius="8" Background="#3e4147">
+                    --><!--<Border CornerRadius="8" Background="#3e4147">--><!--
 
                         <Grid>
                             <TextBox Background="LightGray" VerticalContentAlignment="Center" x:Name="LoginMessageBox">
@@ -24,7 +24,7 @@
                             </TextBox>
 
 
-                            <TextBlock IsHitTestVisible="False" Text="@Message" VerticalAlignment="Center"
+                            <TextBlock IsHitTestVisible="False" VerticalAlignment="Center"
                                        HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="Gray">
 
                                 <TextBlock.Style>
@@ -42,10 +42,10 @@
 
                         </Grid>
 
-                    </Border>
+                    --><!--</Border>--><!--
                 </ControlTemplate>
             </Setter.Value>
-        </Setter>
+        </Setter>-->
     </Style>
     
 </ResourceDictionary>

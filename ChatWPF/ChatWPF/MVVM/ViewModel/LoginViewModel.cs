@@ -17,7 +17,8 @@ namespace ChatWPF.MVVM.ViewModel
         public LoginViewModel()
         {
             _server = new Server();
-            ConnectToServerCommand = new RelayCommand(o => _server.ConnectToServer(Username));
+            ConnectToServerCommand = new RelayCommand(o => _server.ConnectToServer(Username), o => !string.IsNullOrEmpty(Username));
+            Console.WriteLine(Username);
             
         }
     }
