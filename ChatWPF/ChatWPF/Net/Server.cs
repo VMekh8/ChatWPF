@@ -11,7 +11,11 @@ namespace ChatWPF.Net
     class Server
     {
         TcpClient _client;
-        
+
+        public event Action ConnectedEvent;
+
+
+        public PacketReader PacketReader;
         public Server()
         {
             _client = new TcpClient();
@@ -22,10 +26,16 @@ namespace ChatWPF.Net
             if(!_client.Connected)
             {
                 _client.Connect("127.0.0.1", 7891);
-                var connectPacket = new PacketBuilder();
-                connectPacket.WriteOpCode(0);
-                connectPacket.WriteString(username);
-                _client.Client.Send(connectPacket.GetPacketBytes());
+                PacketReader = new PacketReader(_client.GetStream());
+
+                if (!string.IsNullOrEmpty(username))
+                {
+                    var connectPacket = new PacketBuilder();
+                    connectPacket.WriteOpCode(0);
+                    connectPacket.WriteString(username);
+                    _client.Client.Send(connectPacket.GetPacketBytes());
+                }
+
             }
         }
     }

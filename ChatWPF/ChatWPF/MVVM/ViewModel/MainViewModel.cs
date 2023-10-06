@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ChatWPF.MVVM.ViewModel
 {
-    class MainViewModel : ObservableObject
+    class MainViewModel : ObservableCollection
     {
         public ObservableCollection<MessageModel> Messages{ get; set; }
         public ObservableCollection<ContactModel> Contacts{ get; set; }

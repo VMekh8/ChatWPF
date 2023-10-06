@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ChatWPF.Core
 {
-   public class ObservableObject : INotifyPropertyChanged
+   public class ObservableCollection : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
