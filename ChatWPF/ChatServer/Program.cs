@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChatServer.Net.IO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -23,8 +24,25 @@ namespace ChatServer
             {
             var client = new Client(_listener.AcceptTcpClient());
                 _users.Add(client);
+                BroadCastConnection();
             }
-
+            
         }
+
+        static void BroadCastConnection()
+        {
+            foreach (var user in _users)
+            {
+                foreach(var usr in _users)
+                {
+                    var broadcastpacket = new PacketBuilder();
+                    broadcastpacket.WriteOpCode(1);
+                    broadcastpacket.WriteMessage(usr.Username);
+                    broadcastpacket.WriteMessage(usr.UID.ToString());
+                    user.ClientSocket.Client.Send(broadcastpacket.GetPacketBytes());
+                }
+            }
+        }
+
     }
 }
